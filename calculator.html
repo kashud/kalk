@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <meta charset="8-utf">
+        <title>Wypasiony kalkulator</title>
+        </title>
+        <style>
+            #calc{
+                height: 260px;
+                width: 240px;
+                margin-left: auto;
+                margin-right: auto;
+                background-color:rgb(255, 245, 249);
+                border-radius: 5px;
+                border: outset;
+                border-width: 3px;
+                border-color: rgb(247, 215, 236);
+            }
+            #empt1{
+                height: 20px;
+                width: 240px;
+            }
+            .result{
+                height: 40px;
+                width: 200px;
+                margin-left: auto;
+                margin-right: auto;
+                border: outset;
+                border-width: 1px;
+                border-color: rgba(224, 224, 224, 0.377);
+            }
+            #btns{
+                height: 160px;
+                width: 200px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .btn{
+                height: 40px;
+                width: 40px;
+                float: left;
+                background-color:rgb(245, 185, 197);
+                border-radius: 3px;
+                border-color:rgb(252, 216, 223);
+                transition-duration: 0.2s;
+            }
+            .btn:hover{
+                border-color: rgb(238, 163, 178);
+                background-color: rgb(243, 154, 171);
+            }
+            #btn0{
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="calc">
+            <div id="empt1">
+            </div>
+            <div class="result">
+                <input type="text" id="result" class="result" disabled>
+            </div>
+            <div id="empt1">
+            </div>
+            <div id="btns">
+                <button class="btn" onclick="add(7)">7</button>
+                <button class="btn" onclick="add(8)">8</button>
+                <button class="btn" onclick="add(9)">9</button>
+                <button class="btn" onclick="rmv()">AC</button>
+                <button class="btn" onclick="del()">C</button>
+                <button class="btn" onclick="add(4)">4</button>
+                <button class="btn" onclick="add(5)">5</button>
+                <button class="btn" onclick="add(6)">6</button>
+                <button class="btn" onclick="multiplication()">*</button>
+                <button class="btn" onclick="division()">/</button>
+                <button class="btn" onclick="add(1)">1</button>
+                <button class="btn" onclick="add(2)">2</button>
+                <button class="btn" onclick="add(3)">3</button>
+                <button class="btn" onclick="addition()">+</button>
+                <button class="btn" onclick="substraction()">-</button>
+                <button class="btn" onclick="add(0)">0</button>
+                <button class="btn" onclick="bracketleft()">(</button>
+                <button class="btn" onclick="bracketright()">)</button>
+                <button class="btn" id="btn0" onclick="action()">=</button>
+            </div>
+        </div>
+        <script>
+            function add(x){
+                var result = document.getElementById("result");
+                result.value += x;
+            }
+            function rmv(){
+                var result = document.getElementById("result");
+                result.value = "";
+            }
+            function del(){
+            }
+            function multiplication(){
+                var result = document.getElementById("result");
+                result.value += "*";
+            }
+            function division(){
+                var result = document.getElementById("result");
+                result.value += "/";
+            }
+            function addition(){
+                var result = document.getElementById("result");
+                result.value += "+";
+            }
+            function substraction(){
+                var result = document.getElementById("result");
+                result.value += "-";
+            }
+            function bracketleft(){
+                var result = document.getElementById("result");
+                result.value += "(";
+            }
+            function bracketright(){
+                var result = document.getElementById("result");
+                result.value += ")";
+            }
+            function action(){
+                var result = document.getElementById("result");
+                var end = eval(document.getElementById("result").value);
+                result.value = end;
+            }
+        </script>
+    </body>
+</html>
